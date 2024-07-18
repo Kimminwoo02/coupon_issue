@@ -72,7 +72,7 @@ class CouponTest {
                 .build();
 
         // when
-        boolean result = coupon.availableIssueQuantity();
+        boolean result = coupon.availableIssueDate();
 
 
         // then
@@ -90,7 +90,7 @@ class CouponTest {
                 .build();
 
         // when
-        boolean result = coupon.availableIssueQuantity();
+        boolean result = coupon.availableIssueDate();
 
 
         // then
@@ -108,15 +108,84 @@ class CouponTest {
                 .build();
 
         // when
-        boolean result = coupon.availableIssueQuantity();
+        boolean result = coupon.availableIssueDate();
 
 
         // then
         Assertions.assertFalse(result);
     }
 
+    @Test
+    @DisplayName("발급 수량과 발급기간이 유효하다면 발급에 성공한다.")
+    void issue_1() {
+        // given
+        Coupon coupon = Coupon.builder()
+                .totalQuantity(100)
+                .issuedQuantity(99)
+                .dateIssueStart(LocalDateTime.now().minusDays(1))
+                .dateIssueEnd(LocalDateTime.now().plusDays(2))
+                .build();
+
+        // when
+        coupon.issue();
+
+        Assertions.assertEquals(coupon.getIssuedQuantity(),100);
+    }
+
 
     @Test
-    void availableIssueDate() {
+    @DisplayName("발급 수량과 발급기간이 유효하다면 발급에 성공한다.")
+    void issue_2() {
+        // given
+        Coupon coupon = Coupon.builder()
+                .totalQuantity(100)
+                .issuedQuantity(99)
+                .dateIssueStart(LocalDateTime.now().minusDays(1))
+                .dateIssueEnd(LocalDateTime.now().plusDays(2))
+                .build();
+
+        // when
+        coupon.issue();
+
+        Assertions.assertEquals(coupon.getIssuedQuantity(),100);
     }
+
+    @Test
+    @DisplayName("발급 수량과 초과하면 예외를 반환한다.")
+    void issue_3() {
+        // given
+        Coupon coupon = Coupon.builder()
+                .totalQuantity(100)
+                .issuedQuantity(100)
+                .dateIssueStart(LocalDateTime.now().minusDays(1))
+                .dateIssueEnd(LocalDateTime.now().plusDays(2))
+                .build();
+
+        // when
+        coupon.issue();
+
+
+        // then
+        Assertions.assertThrows(RuntimeException.class, coupon::issue);
+    }
+
+
+    @Test
+    @DisplayName("발급기간이 아니면 예외를반환한다.")
+    void issue_4() {
+        // given
+        Coupon coupon = Coupon.builder()
+                .totalQuantity(100)
+                .issuedQuantity(99)
+                .dateIssueStart(LocalDateTime.now().plusDays(1))
+                .dateIssueEnd(LocalDateTime.now().plusDays(2))
+                .build();
+
+        // when
+        coupon.issue();
+
+        // then
+        Assertions.assertThrows(RuntimeException.class, coupon::issue);
+    }
+
 }
