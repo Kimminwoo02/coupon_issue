@@ -1,5 +1,8 @@
 package com.example.coupon_core.exception;
 
+import lombok.Getter;
+
+@Getter
 public class CouponIssueException extends RuntimeException{
     private final ErrorCode errorCode;
     private final String message;
