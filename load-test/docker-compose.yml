@@ -7,7 +7,7 @@ services:
     volumes:
       - ./:/mnt/locust
     command:
-      - f /mnt/locust/locustfile-hello.py --master -H http://host.docker.internal:8080
+      -f /mnt/locust/locustfile-v1.py --master -H http://host.docker.internal:8080
 
 
   worker:
@@ -15,4 +15,4 @@ services:
     volumes:
       - ./:/mnt/locust
     command:
-      - f /mnt/locust/locustfile-hello.py --worker --master-host master
+      -f /mnt/locust/locustfile-v1.py --worker --master-host master
