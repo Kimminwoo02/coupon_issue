@@ -57,12 +57,12 @@ public class Coupon extends BaseEntity{
         return dateIssueStart.isBefore(now) && dateIssueEnd.isAfter(now);
     }
 
-    void issue(){
+    public void issue(){
         if(!availableIssueQuantity()){
-            throw new CouponIssueException(ErrorCode.INVALID_COUPON_ISSUE_QUANTITY,"Quantity Check");
+            throw new CouponIssueException(ErrorCode.INVALID_COUPON_ISSUE_QUANTITY,"발급 가능한 수량을 초과했습니다. Total: $s, issued: %s".formatted(totalQuantity,issuedQuantity));
         }
         if(!availableIssueDate()){
-            throw new CouponIssueException(ErrorCode.INVALID_COUPON_ISSUE_DATE,"Date Check");
+            throw new CouponIssueException(ErrorCode.INVALID_COUPON_ISSUE_DATE,"발급 가능한 날짜가 아닙니다. issueStart: %s, issueEnd:%s".formatted(dateIssueStart,dateIssueEnd));
         }
 
         issuedQuantity++;
