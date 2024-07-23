@@ -15,9 +15,9 @@ public class CouponIssueRequestService {
     private final DistributeLockExecutor distributeLockExecutor;
 
     public void issueRequestV1(CouponIssueRequestDto requestDto){
-        distributeLockExecutor.execute ("lock_name "+ requestDto.couponId(), 10000,10000, ()->{
+//        distributeLockExecutor.execute ("lock_name "+ requestDto.couponId(), 10000,10000, ()->{ 레디스 락 제거
             couponIssueService.issue(requestDto.couponId(), requestDto.userId());
-        });
+//        });
         log.info("쿠폰 발급 완료. couponId: %s, userId: %s".formatted(requestDto.couponId(), requestDto.userId()));
     }
 
