@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class CouponControllerAdvice {
     @ExceptionHandler(CouponIssueException.class)
     public CouponIssueResponseDto couponExceptionHandler(CouponIssueException exception){
-        return new CouponIssueResponseDto()
+        return new CouponIssueResponseDto(false,"발급에 실패하였습니다." );
     }
 
 }
