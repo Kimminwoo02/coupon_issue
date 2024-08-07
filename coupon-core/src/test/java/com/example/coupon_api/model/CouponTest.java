@@ -1,12 +1,11 @@
-package com.example.coupon_core.model;
+package com.example.coupon_api.model;
 
+import com.example.coupon_core.model.Coupon;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CouponTest {
 

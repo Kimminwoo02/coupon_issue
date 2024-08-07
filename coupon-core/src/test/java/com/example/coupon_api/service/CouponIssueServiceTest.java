@@ -1,6 +1,6 @@
-package com.example.coupon_core.service;
+package com.example.coupon_api.service;
 
-import com.example.coupon_core.TestConfig;
+import com.example.coupon_api.TestConfig;
 import com.example.coupon_core.exception.CouponIssueException;
 import com.example.coupon_core.exception.ErrorCode;
 import com.example.coupon_core.model.Coupon;
@@ -9,6 +9,7 @@ import com.example.coupon_core.model.CouponType;
 import com.example.coupon_core.repository.mysql.CouponIssueJpaRepository;
 import com.example.coupon_core.repository.mysql.CouponIssueRepository;
 import com.example.coupon_core.repository.mysql.CouponJpaRepository;
+import com.example.coupon_core.service.CouponIssueService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -16,8 +17,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDateTime;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CouponIssueServiceTest extends TestConfig {
 

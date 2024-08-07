@@ -1,5 +1,6 @@
-package com.example.coupon_core;
+package com.example.coupon_consumer;
 
+import com.example.coupon_core.CouponCoreConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;

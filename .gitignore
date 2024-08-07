@@ -35,3 +35,5 @@ out/
 
 ### VS Code ###
 .vscode/
+
+coupon-core/src/main/generated/com/example/coupon_core/model/

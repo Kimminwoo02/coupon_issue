@@ -38,8 +38,6 @@ public class AsyncCouponIssueServiceV1 {
             couponIssueRedisService.checkCouponIssueQuantity(coupon,userId);
             issueRequest(couponId,userId);
         });
-
-
     }
 
     private void issueRequest(long couponId, long userId){
