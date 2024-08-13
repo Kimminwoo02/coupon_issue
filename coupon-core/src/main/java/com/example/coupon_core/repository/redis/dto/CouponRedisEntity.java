@@ -42,6 +42,9 @@ public record CouponRedisEntity(
     }
 
     public void checkIssuableCoupon(){
+        if(!availableIssueQuantity){
+            throw new CouponIssueException(INVALID_COUPON_ISSUE_QUANTITY,"모든 발급수량이 소진되었습니다.");
+        }
         if( !availableIssueDate()){
             throw new CouponIssueException(FAIL_COUPON_ISSUE_REQUEST,"발급 가능한 일자가 아닙니다!");
         }
