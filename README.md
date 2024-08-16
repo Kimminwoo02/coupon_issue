@@ -11,7 +11,7 @@
 
 ## **기술 스택 🛠️**
 
-<div align="center">
+<div>
 
   <img width="450" alt="스크린샷 2024-08-16 오후 11 29 49" src="https://github.com/user-attachments/assets/5f5bcd89-315b-4a39-aa73-aeca415fe8d4">
   <br>
