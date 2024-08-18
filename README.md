@@ -17,7 +17,8 @@
   <br>
  <img width="450" alt="스크린샷 2024-08-16 오후 11 32 14" src="https://github.com/user-attachments/assets/4d61f849-8c68-4081-a114-9938bad346db">
 <br>
-<img width="450" alt="스크린샷 2024-08-16 오후 11 30 18" src="https://github.com/user-attachments/assets/e1e3601a-b6fc-4066-bc25-0c1ccb736bf6">
+<img width="450" alt="스크린샷 2024-08-18 오후 6 08 29" src="https://github.com/user-attachments/assets/7fc7644f-5fda-4880-b75a-bf7c90f987b0">
+
 <br>
 </div>
 
